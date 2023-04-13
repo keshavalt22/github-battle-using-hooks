@@ -23,31 +23,25 @@ function App() {
 
 
   return (
-    <Routes >
-      {/* <Route path="/"
-        element={}
-      /> */}
-
-      {/* <Route path="/"
-        element={<Header />}
-      /> */}
-
-      <Route path='/'
-        element={<>
-          <Header />,
-          <Menu data={data} />,
-          <Main data={data} />
-        </>} />
-      <Route path='/post'
-        element={<Menu data={data} />}
-      />
-      <Route path='/post/:language'
-        element={<SingleLanguage data={data} />}
-      />
-      <Route path='/battle'
-        element={<Battle />}
-      />
-    </Routes>
+    <>
+      <Header />
+      <Routes >
+        <Route path='/'
+          element={[
+            <Menu data={data} />,
+            <Main data={data} />
+          ]}
+        />
+        <Route path='/post/:language'
+          element={[
+            <Menu data={data} />,
+            <SingleLanguage data={data} />]}
+        />
+        <Route path='/battle'
+          element={<Battle />}
+        />
+      </Routes>
+    </>
   )
 }
 

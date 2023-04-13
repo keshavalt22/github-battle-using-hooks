@@ -6,7 +6,7 @@ function Main(props) {
         return <Loader />
     }
     let info = props.data.items;
-    console.log(info);
+    // console.log(info);
     return (
         <ul className='boxes'>{
             info.map((post, i) => {

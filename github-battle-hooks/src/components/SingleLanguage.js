@@ -5,7 +5,7 @@ import withRouter from "../utils/withRouter";
 
 function SingleLanguage(props) {
 
-    console.log(props.params.language);
+    // console.log(props.params.language);
 
     const [data, setData] = useState([]);
 
@@ -16,14 +16,14 @@ function SingleLanguage(props) {
             .then((data) => {
                 setData(data)
             })
-    }, []);
+    }, [props.params.language]);
 
     if (!data.items) {
         return <Loader />
     }
 
     let info = data.items;
-    console.log(data.items);
+    // console.log(data.items);
 
 
     return (
